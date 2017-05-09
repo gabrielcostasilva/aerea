@@ -1,22 +1,20 @@
+
 package com.avaliacao.modelo;
 
 import com.avaliacao.entidade.Voo;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.persistence.FetchType;
-
 
 @ManagedBean
 @ViewScoped
-public class AviaoMB {
+public class DestinoMB {
     
-    private String nomePiloto;
-    private List<Voo> voos;
-    
+private String nome;
+private List<Voo> voos;
+
     @EJB
-    private IAviao aviaoBean;
+    private IDestino destinoBean;
 
 }

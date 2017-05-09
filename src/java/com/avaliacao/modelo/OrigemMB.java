@@ -1,3 +1,4 @@
+
 package com.avaliacao.modelo;
 
 import com.avaliacao.entidade.Voo;
@@ -9,14 +10,16 @@ import javax.faces.bean.ViewScoped;
 import javax.persistence.FetchType;
 
 
+
 @ManagedBean
 @ViewScoped
-public class AviaoMB {
+public class OrigemMB {
     
-    private String nomePiloto;
-    private List<Voo> voos;
-    
+private String nome;
+
+private List<Voo> voos;
+
     @EJB
-    private IAviao aviaoBean;
+    private IOrigem origemBean;
 
 }

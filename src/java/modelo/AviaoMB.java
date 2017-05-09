@@ -19,7 +19,6 @@ public class AviaoMB {
 
     public AviaoMB() {
         super();
-        aviao = new Aviao();
     }
 
     public Aviao getAviao() {

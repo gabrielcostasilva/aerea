@@ -6,17 +6,15 @@
 package negocio;
 
 import com.avaliacao.entidade.Aviao;
-import com.avaliacao.entidade.DestinoVoo;
+import com.avaliacao.entidade.OrigemVoo;
 import java.util.List;
 import javax.ejb.Local;
 
-/**
- *
- * @author Aluno
- */
 @Local
+
 public interface IOrigemVoo {
     
-    boolean criar (DestinoVoo DestinoVoo);
-     List<Aviao> consultar();
+    boolean criar (OrigemVoo OrigemVoo);
+     List<OrigemVoo> consultar();
+   
 }

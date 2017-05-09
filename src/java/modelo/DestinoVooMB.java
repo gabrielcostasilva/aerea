@@ -26,7 +26,7 @@ public class DestinoVooMB {
     }
     
     @EJB
-    private IDestinoVoo destinoVoo;
+    private IDestinoVoo destinoVooBean;
 
     public DestinoVoo getDestinoVoo() {
         return destinoVoo;
@@ -38,7 +38,7 @@ public class DestinoVooMB {
     
     public String criar() {
         
-            DestinoVooBean.criar (this.getDestinoVoo());
+            destinoVooBean.criar (this.getDestinoVoo());
             return "criado";
     }
     

@@ -16,8 +16,6 @@ import javax.ejb.Local;
  */
 @Local
 public interface IDestinoVoo {
-
-
      boolean criar (DestinoVoo DestinoVoo);
      List<DestinoVoo> consultar();
     

@@ -5,8 +5,7 @@
  */
 package negocio;
 
-import com.avaliacao.entidade.Aviao;
-import com.avaliacao.entidade.DestinoVoo;
+import com.avaliacao.entidade.Passageiro;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -17,6 +16,6 @@ import javax.ejb.Local;
 @Local
 public interface IPassageiro {
     
-    boolean criar (DestinoVoo DestinoVoo);
-     List<Aviao> consultar();
+    boolean criar (Passageiro Passageiro);
+     List<Passageiro> consultar();
 }

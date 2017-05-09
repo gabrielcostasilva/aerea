@@ -3,9 +3,11 @@ package com.avaliacao.entidade;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class OrigemVoo implements Serializable {
@@ -13,7 +15,19 @@ public class OrigemVoo implements Serializable {
     @Id @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    
+    @ManyToOne (fetch = FetchType.EAGER)
+    private Voo voo;
 
+    public Voo getVoo() {
+        return voo;
+    }
+
+    public void setVoo(Voo voo) {
+        this.voo = voo;
+    }
+    
+        
     public OrigemVoo() {
         super();
     }
@@ -61,8 +75,12 @@ public class OrigemVoo implements Serializable {
 
     @Override
     public String toString() {
-        return "OrigemVoo{" + "id=" + id + ", nome=" + nome + '}';
+        return "OrigemVoo{" + "id=" + id + ", nome=" + nome + ", voo=" + voo + '}';
     }
+
+
+    
+    
     
     
     

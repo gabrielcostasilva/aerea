@@ -1,12 +1,50 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Compania Aérea</title>
     </h:head>
     <h:body>
-        <h1>Página principal</h1>
+        <h:form> 
+            <p:outputLabel value="Data de Voo"></p:outputLabel>
+            <p:calendar id="popup" value="#{CalendarView.date2}" />
+            <p:outputLabel value="Selecione a Origem"></p:outputLabel>
+            <p:dataTable var="origem" value="#{origemMB.consultar()}">
+                <p:column headerText="Id">
+                    <h:outputText value="#{origemVoo.id}" />
+                </p:column>
+
+                <p:column headerText="Nome">
+                    <h:outputText value="#{origemVoo.nome}" />
+                </p:column>
+            </p:dataTable>
+            
+            <p:outputLabel value="Selecione o Destino"></p:outputLabel>
+            <p:dataTable var="destino" value="#{destinoMB.consultar()}">
+                <p:column headerText="Id">
+                    <h:outputText value="#{destinoVoo.id}" />
+                </p:column>
+
+                <p:column headerText="Nome">
+                    <h:outputText value="#{destinoVoo.nome}" />
+                </p:column>
+            </p:dataTable>
+            
+            <p:outputLabel value="Selecione Aviões"></p:outputLabel>
+            <p:dataTable var="avioes" value="#{avioesMB.consultar()}">
+                <p:column headerText="Id">
+                    <h:outputText value="#{avioes.id}" />
+                </p:column>
+
+                <p:column headerText="Nome">
+                    <h:outputText value="#{avioes.nome}" />
+                </p:column>
+            </p:dataTable>
+            
+          
+        </h:form>
     </h:body>
 </html>
 

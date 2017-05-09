@@ -10,9 +10,7 @@ import javax.persistence.Id;
 public class Aviao implements Serializable {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;   
     private String nomePiloto;
-    
-    
-    
+      
 }

@@ -16,7 +16,6 @@ public class DestinoVoo implements Serializable {
 
     public DestinoVoo() {
         super();
-        
     }
 
     public Long getId() {

@@ -19,69 +19,87 @@
                     <p:outputLabel value="Selecione origem: " for="origem"/>
 
                     <p:panelGrid columns="2" id="origem">
-
-
                         <f:facet name="header">
-
                             <p:row>
-                                <p:column colspan="2">Id</p:column>
-                                <p:column colspan="2">Nome</p:column>
+                                <p:column>Id</p:column>
+                                <p:column>Nome</p:column>
                             </p:row>
-
                         </f:facet>
-
-                        <h:outputText value="Name:"  />
-                        <h:outputText value="Kobe Bryant" />
-
+                        <p:row>
+                            <p:column >&nbsp;</p:column>
+                            <p:column >&nbsp;</p:column>
+                        </p:row>
                     </p:panelGrid>
 
                     <p:outputLabel value="Selecione destino: " for="destino"/>
 
                     <p:panelGrid columns="2" id="destino">
-
-
                         <f:facet name="header">
-
                             <p:row>
-                                <p:column colspan="2">Id</p:column>
-                                <p:column colspan="2">Nome</p:column>
+                                <p:column>Id</p:column>
+                                <p:column>Nome</p:column>
                             </p:row>
-
                         </f:facet>
 
-                        <h:outputText value="Name:"  />
-                        <h:outputText value="Kobe Bryant" />
+                        <p:row>
+                            <p:column ></p:column>
+                            <p:column ></p:column>
+                        </p:row>
 
                     </p:panelGrid>
 
-                    <p:outputLabel value="Selecione aviões: " for="avioes"/>
+                    <p:outputLabel value="Selecione aviões:" for="avioes"/>
 
                     <p:panelGrid columns="2" id="avioes">
-
-
                         <f:facet name="header">
-
                             <p:row>
-                                <p:column colspan="2">Id</p:column>
-                                <p:column colspan="2">Nome</p:column>
+                                <p:column >Id</p:column>
+                                <p:column >Nome</p:column>
                             </p:row>
-
                         </f:facet>
-
-                        <h:outputText value="Name:"  />
-                        <h:outputText value="Kobe Bryant" />
-
+                        <p:row>
+                            <p:column ></p:column>
+                            <p:column ></p:column>
+                        </p:row>
                     </p:panelGrid>
+
+                    <p:outputLabel value="Adicionar pasasgeiros " for="adicionar"/>
+                    <p:commandButton  value="Adicionar" id="adicionar" actionListener="#{buttonView.buttonAction}" ajax="false" />
+
+                    <p:button  value="Criar voo" >
+
+                    </p:button>
+                    <p:button  value="Cancelar" >
+
+                    </p:button>
 
                 </h:panelGrid>
             </p:panel>
 
             <p:panel id="voosexistentes" header="Voos existentes" style="margin-bottom:20px">
-                <h:panelGrid columns="2" cellpadding="10">
+                <p:panelGrid style="margin-top:20px">
+                    <f:facet name="header">
+                        <p:row>
+                            <p:column >Id</p:column>
+                            <p:column >Data</p:column>
+                            <p:column >Nome piloto</p:column>
+                            <p:column>Origem</p:column>
+                            <p:column>Destino</p:column>
+                        </p:row>
 
-                    <h:outputText
-                        value="The story begins as Don Vito Corleone..." />
-                </h:panelGrid>
+                    </f:facet>
+
+                    <p:row>
+                        <p:column ></p:column>
+                        <p:column ></p:column>
+
+                        <p:column  ></p:column>
+                        <p:column  ></p:column>
+
+                        <p:column ></p:column>
+
+                    </p:row>
+                </p:panelGrid>
             </p:panel>
 
         </h:form>

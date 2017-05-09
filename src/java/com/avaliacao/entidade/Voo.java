@@ -3,6 +3,7 @@ package com.avaliacao.entidade;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,20 @@ public class Voo implements Serializable {
     @ManyToMany (fetch = FetchType.EAGER)
     private List<Aviao> avioes;
     
+    @ElementCollection
+    private List<Passageiro> passageiros; 
+
+    
     public Voo(){
         super();
+    }
+
+    public List<Passageiro> getPassageiros() {
+        return passageiros;
+    }
+
+    public void setPassageiros(List<Passageiro> passageiros) {
+        this.passageiros = passageiros;
     }
     
    
@@ -64,8 +77,10 @@ public class Voo implements Serializable {
 
     @Override
     public String toString() {
-        return "Voo{" + "id=" + id + ", avioes=" + avioes + '}';
+        return "Voo{" + "id=" + id + ", avioes=" + avioes + ", passageiros=" + passageiros + '}';
     }
+
+   
     
     
     

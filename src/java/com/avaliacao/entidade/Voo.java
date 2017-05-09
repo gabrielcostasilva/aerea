@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,7 +29,30 @@ public class Voo implements Serializable {
     
     @ManyToOne (fetch = FetchType.EAGER)
     private DestinoVoo destinoVoo;
+    
+    @ManyToOne (fetch = FetchType.EAGER)
+    private OrigemVoo origemVoo;
+    
+    @ElementCollection
+    private List<Passageiro> passageiro;
 
+    public OrigemVoo getOrigemVoo() {
+        return origemVoo;
+    }
+
+    public void setOrigemVoo(OrigemVoo origemVoo) {
+        this.origemVoo = origemVoo;
+    }
+
+    public List<Passageiro> getPassageiro() {
+        return passageiro;
+    }
+
+    public void setPassageiro(List<Passageiro> passageiro) {
+        this.passageiro = passageiro;
+    }
+
+    
     public Date getDataVoo() {
         return dataVoo;
     }

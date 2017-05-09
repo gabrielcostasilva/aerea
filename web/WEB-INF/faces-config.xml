@@ -20,5 +20,9 @@
             <from-outcome>erro</from-outcome>
             <to-view-id>/voo.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>retornar</from-outcome>
+            <to-view-id>/voo.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 </faces-config>

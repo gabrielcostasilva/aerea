@@ -5,7 +5,7 @@
       xmlns:p="http://primefaces.org/ui">
     
     <h:head>
-        <title>Facelet Title</title>
+        <title>Criar Voo</title>
     </h:head>
     <h:body>
         <p:panel id="basic" header="Criar Voo" >
@@ -53,6 +53,35 @@
                     <p:commandButton ajax="false" value="Criar" action=""></p:commandButton>
                     
                     
+            </h:panelGrid>
+        </p:panel>
+    </br>
+        <p:panel id="basic" header="Voos Existentes" >
+            <h:panelGrid columns="1" cellpadding="10">
+                    
+                    <p:dataTable var="origem" value="" style="width: 300px;">
+                        <p:column headerText="Id">
+                            <h:outputText value="1" />
+                        </p:column>
+
+                        <p:column headerText="Data">
+                            <h:outputText value="Sample" />
+                        </p:column>
+                        
+                        <p:column headerText="Nome Piloto">
+                            <h:outputText value="Sample" />
+                        </p:column>
+                        
+                         <p:column headerText="Origem">
+                            <h:outputText value="Sample" />
+                        </p:column>
+                        
+                         <p:column headerText="Destino">
+                            <h:outputText value="Sample" />
+                        </p:column>
+                    </p:dataTable>
+                    
+                   
             </h:panelGrid>
         </p:panel>
     </h:body>

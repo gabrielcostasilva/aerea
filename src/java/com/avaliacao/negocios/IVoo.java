@@ -13,7 +13,7 @@ import javax.ejb.Local;
 @Local
 public interface IVoo {
     
-    boolean criar(Date data, String Origem, String Destino, List<String> avioes);
+    boolean criar(Voo voo);
     List<Voo> consultar();
     
 }

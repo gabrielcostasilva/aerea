@@ -21,17 +21,15 @@ public class VooBean implements IVoo{
     private EntityManager em;
 
     @Override
-    public boolean criar(Date data, Origem origem, String destino, List<String> avioes) {
-        Voo voo = new Voo();
-        
-        voo.setDataVoo(data);
-        voo.setOrigemVoo(origem);
-        voo.getDestinoVoo(destino);
+    public List<Voo> consultar() {
+        return em.createQuery("SELECT v FROM Voo v", Voo.class).getResultList();
     }
 
     @Override
-    public List<Voo> consultar() {
-        return em.createQuery("SELECT v FROM Voo v", Voo.class).getResultList();
+    public boolean criar(Voo voo) {
+        em.persist(voo);
+        
+        return true;
     }
     
 }

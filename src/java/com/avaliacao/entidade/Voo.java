@@ -36,6 +36,13 @@ public class Voo implements Serializable {
     @ManyToMany (mappedBy = "voos")
     private List<Aviao> avioes;
 
+    public Voo(Date dataVoo, DestinoVoo destinoVoo, OrigemVoo origemVoo, List<Aviao> avioes) {
+        this.dataVoo = dataVoo;
+        this.destinoVoo = destinoVoo;
+        this.origemVoo = origemVoo;
+        this.avioes = avioes;
+    }
+
     public Voo() {
         super();
     }

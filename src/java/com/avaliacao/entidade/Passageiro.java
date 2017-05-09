@@ -1,6 +1,7 @@
 package com.avaliacao.entidade;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Embeddable;
 
 @Embeddable
@@ -32,6 +33,36 @@ public class Passageiro implements Serializable {
     public void setDocumento(String documento)
     {
         this.documento = documento;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 3;
+        hash = 53 * hash + Objects.hashCode(this.nome);
+        hash = 53 * hash + Objects.hashCode(this.documento);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        final Passageiro other = (Passageiro) obj;
+        if (!Objects.equals(this.nome, other.nome))
+            return false;
+        return Objects.equals(this.documento, other.documento);
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Passageiro{" + "nome=" + nome + ", documento=" + documento + '}';
     }
 
 }

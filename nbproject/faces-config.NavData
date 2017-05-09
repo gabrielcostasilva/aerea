@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
-    <Scope Scope="Project"/>
+    <Scope Scope="Project">
+        <Node id="adicionapassageiro.xhtml" x="319" y="420" zoom="true"/>
+        <Node id="index.xhtml" x="56" y="233" zoom="true"/>
+        <Node id="voo.xhtml" x="397" y="176" zoom="true"/>
+    </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

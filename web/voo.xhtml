@@ -16,45 +16,47 @@
                     <p:calendar id="data" value="" />
 
                     <p:outputLabel for="origem" value="Selecione origem: "></p:outputLabel>
-                    <p:dataTable id="origem" var="or" value="#{}" selectionMode="single" selection="#{}" rowKey="#{}">                     
+                    <p:dataTable id="origem" var="origem" value="#{vooMB.listaOrigem()}" 
+                                 selectionMode="single" selection="#{vooMB.origemId}" rowKey="#{origem.id}">                     
                         <p:column headerText="Id">
-                            <h:outputText value="#{}" />
+                            <h:outputText value="#{origem.id}" />
                         </p:column>
                         <p:column headerText="Nome">
-                            <h:outputText value="#{}" />
+                            <h:outputText value="#{origem.nome}" />
                         </p:column>
                     </p:dataTable>
 
 
                     <p:outputLabel for="destino" value="Selecione destino"></p:outputLabel>
 
-                    <p:dataTable id="destino" var="dest" value="#{}" selectionMode="single" selection="#{}" rowKey="#{}">
+                    <p:dataTable id="destino" var="dest" value="#{vooMB.listaDestino()}" 
+                                 selectionMode="single" selection="#{vooMB.destinoId}" rowKey="#{dest.id}">
                         <p:column headerText="Id">
-                            <h:outputText value="#{}" />
+                            <h:outputText value="#{dest.id}" />
                         </p:column>
                         <p:column headerText="Nome">
-                            <h:outputText value="#{}" />
+                            <h:outputText value="#{dest.nome}" />
                         </p:column>
                     </p:dataTable>
 
                     <p:outputLabel for="avioes" value="Selecione aviões:"></p:outputLabel>
 
-                    <p:dataTable id="avioes" var="av" value="#{}" selectionMode="multiple" selection="#{}" rowKey="#{}">
+                    <p:dataTable id="avioes" var="aviao" value="#{vooMB.listaAvioes()}" selectionMode="multiple" 
+                                 rowKey="#{aviao.id}">
                         <p:column headerText="Id">
-                            <h:outputText value="#{}" />
+                            <h:outputText value="#{aviao.id}" />
                         </p:column>
-                        <p:column headerText="Nome">
-                            <h:outputText value="#{}" />
+
+                        <p:column headerText="Nome Piloto">
+                            <h:outputText value="#{aviao.nomePiloto}" />
                         </p:column>
                     </p:dataTable>
 
                     <p:outputLabel for="btnAdicionarPassageiro" value="Adicionar passageiros:"></p:outputLabel>
-                    <p:commandButton value="Adicionar" ajax="false" action="#{vooMB.criarPassageiro()}"></p:commandButton>
+                    <p:commandButton id="btnAdicionarPassageiro" value="Adicionar" ajax="false" action="novo_passageiro"></p:commandButton>
 
-                    <h:outputLabel value="Nome: "></h:outputLabel>
-                    <p:inputText value="#{cidadeMB.nome}"></p:inputText>
-
-                    <p:commandButton ajax="false" value="Criar" action="#{cidadeMB.criar()}"></p:commandButton>
+                    <p:commandButton ajax="false" value="Criar Voo" action="#{vooMB.criar()}"></p:commandButton>
+                    <p:commandButton ajax="false" value="Criar Voo" action="retorna_voo"></p:commandButton>
                 </h:panelGrid>
             </p:panel>
         </h:form>

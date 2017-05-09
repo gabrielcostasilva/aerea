@@ -9,40 +9,48 @@ import javax.persistence.Id;
 
 @Entity
 public class OrigemVoo implements Serializable {
-    
-    @Id @GeneratedValue (strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
 
-    public OrigemVoo() {
+    public OrigemVoo()
+    {
         super();
     }
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id)
+    {
         this.id = id;
     }
 
-    public String getNome() {
+    public String getNome()
+    {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome)
+    {
         this.nome = nome;
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int hash = 7;
         hash = 43 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj)
+    {
         if (this == obj) {
             return true;
         }
@@ -53,17 +61,13 @@ public class OrigemVoo implements Serializable {
             return false;
         }
         final OrigemVoo other = (OrigemVoo) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.id, other.id);
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "OrigemVoo{" + "id=" + id + ", nome=" + nome + '}';
     }
-    
-    
-    
+
 }

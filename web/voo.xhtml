@@ -8,19 +8,51 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <p:panel id="basic" header="Basic" footer="Voo" style="margin-bottom:20px">
+        <p:panel id="basic" header="Criar Voo" >
             <h:panelGrid columns="2" cellpadding="10">
-                    <h:outputText value="Name:" />
-                    <h:outputText value="Kobe Bryant" />
+                    <h:outputText value="Data do Voo:" />
+                    <p:calendar id="popup" value="#{calendarView.date}" />
+                    
+                    <h:outputText value="Selecione origem:" />
+                    <p:dataTable var="origem" value="" style="width: 300px;">
+                        <p:column headerText="Id">
+                            <h:outputText value="1" />
+                        </p:column>
 
-                    <h:outputText value="Team:" />
-                    <h:outputText value="Los Angeles Lakers" />
+                        <p:column headerText="Nome">
+                            <h:outputText value="Sample" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                    
+                    <h:outputText value="Selecione destino:" />
+                    <p:dataTable var="destino" value="" style="width: 300px;">
+                        <p:column headerText="Id">
+                            <h:outputText value="1" />
+                        </p:column>
 
-                    <h:outputText value="Position:" />
-                    <h:outputText value="Shooting Guard" />
+                        <p:column headerText="Nome">
+                            <h:outputText value="Sample" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                    
+                    <h:outputText value="Selecione Aviões:" />
+                    <p:dataTable var="avioes" value="" style="width: 300px;">
+                        <p:column headerText="Id">
+                            <h:outputText value="1" />
+                        </p:column>
 
-                    <h:outputText value="Number:" />
-                    <h:outputText value="24" />
+                        <p:column headerText="Nome Piloto">
+                            <h:outputText value="Sample" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                    
+                    <h:outputText value="Adicionar passageiros:" />
+                    <p:commandButton ajax="false" value="Criar" action=""></p:commandButton>
+                    
+                    
             </h:panelGrid>
         </p:panel>
     </h:body>

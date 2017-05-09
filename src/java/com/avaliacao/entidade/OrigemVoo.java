@@ -14,8 +14,6 @@ public class OrigemVoo implements Serializable {
     private Long id;
     private String nome;
     
-    
-
     public OrigemVoo() {
         super();
     }

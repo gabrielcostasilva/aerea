@@ -19,7 +19,8 @@ public class VooMB {
     
     private Voo voo;
     
-    private @EJB IVoo vooBean;
+    @EJB 
+    private IVoo vooBean;
     
     public VooMB() {
         super();
@@ -42,7 +43,6 @@ public class VooMB {
         } catch (Exception e) {
             return "Erro";
         }
-        
     }
     
     public List<Voo> consultar(){

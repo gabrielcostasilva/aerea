@@ -95,9 +95,6 @@ public class Voo implements Serializable {
         this.avioes = avioes;
     }
 
-    
-
-       
     @Override
     public int hashCode() {
         int hash = 5;

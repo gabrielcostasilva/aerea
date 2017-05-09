@@ -16,21 +16,17 @@
                     <p:calendar id="popup" value="#{vooMB.voo.dataVoo}" />
 
                     <p:outputLabel for="eventsDT" value="Selecione Origem:" />
-
                     <p:dataTable id="origem" var="origem" value="#{vooMB.voo.origemVoo}" selectionMode="single" selection="#" rowKey="#">
-
                         <p:column headerText="Id">
-                            <h:outputText value="#{origem.}" />
+                            <h:outputText value="#" />
                         </p:column>
                         <p:column headerText="nome">
-                            <h:outputText value />
+                            <h:outputText value="#" />
                         </p:column>
                     </p:dataTable>
 
                     <p:outputLabel for="destino" value="Selecione Destino:" />
-
-                    <p:dataTable id="destino" var="car" value="#" selectionMode="single" selection="#" rowKey="#">
-
+                    <p:dataTable id="destino" var="destino" value="#" selectionMode="single" selection="#" rowKey="#">
                         <p:column headerText="Id">
                             <h:outputText value="#" />
                         </p:column>
@@ -40,26 +36,20 @@
                     </p:dataTable>
 
                     <p:outputLabel for="aviao" value="Selecione Aviões:" />
-
-                    <p:dataTable id="aviao" var="aviao" value="#" selectionMode="multiple" selection="#" rowKey="#">
-
+                    <p:dataTable id="aviao" var="aviao" value="#{aviao}" selectionMode="multiple" selection="#" rowKey="#">
                         <p:column headerText="Id">
                             <h:outputText value="#" />
                         </p:column>
                         <p:column headerText="NomePiloto">
                             <h:outputText value="#" />
                         </p:column>
-
                     </p:dataTable>
 
                     <p:outputLabel value="Adicionar Passageiros:" />
-
-                    <p:commandButton value="Adicionar" action="#{v}" />
+                    <p:commandButton value="Adicionar" action="adicionar" />
                     <br></br>
                     <p:commandButton value="Criar Voo" action="#{vooMB.criar()}" />
                     <p:commandButton value="Cancelar" action="#" />
-
-
                 </h:panelGrid>
             </p:panel>
 
@@ -75,7 +65,7 @@
                         </p:column>
 
                         <p:column headerText="Nome Piloto">
-                            <h:outputText value="" />
+                            <h:outputText value="#" />
                         </p:column>
 
                         <p:column headerText="Origem">

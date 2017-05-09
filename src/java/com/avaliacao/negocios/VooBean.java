@@ -8,13 +8,11 @@ package com.avaliacao.negocios;
 import com.avaliacao.entidade.Voo;
 import java.util.Date;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-/**
- *
- * @author Aluno
- */
+@Stateless
 public class VooBean implements IVoo{
     
     @PersistenceContext

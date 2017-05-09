@@ -1,12 +1,94 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h:form>
+            <p:panel header="Criar Voo" style="margin-bottom:20px">
+                <h:panelGrid columns="2" cellpadding="10">
+
+                    <h:outputLabel value="Data do voo: "></h:outputLabel>
+                    <p:outputLabel for="popup" value="Popup:" />
+                    <p:calendar id="popup" value="#{calendarView.date2}" />
+
+                    <h:outputLabel value="Selecione Origem: "></h:outputLabel>
+                    
+                    
+                    <p:dataTable id="eventsDT" var="car" value="#{origemVooMB.}" selectionMode="single" selection="#{dtSelectionView.selectedCar}" rowKey="#{car.id}">
+                        <p:ajax event="rowSelect" listener="#{dtSelectionView.onRowSelect}" update="#" />
+                        <p:ajax event="rowUnselect" listener="#{dtSelectionView.onRowUnselect}" update="#" />
+                        <p:column headerText="Id">
+                            <h:outputText value="#{origemVooMB.id}" />
+                        </p:column>
+                        <p:column headerText="Nome">
+                            <h:outputText value="#{origemVooMB.nome}" />
+                        </p:column>
+                    </p:dataTable>
+
+                    <h:outputLabel value="Selecione Destino: "></h:outputLabel>
+                    <p:dataTable id="eventsDT" var="car" value="#{dtSelectionView.cars3}" selectionMode="single" selection="#{dtSelectionView.selectedCar}" rowKey="#{car.id}">
+                        <p:ajax event="rowSelect" listener="#{dtSelectionView.onRowSelect}" update="#" />
+                        <p:ajax event="rowUnselect" listener="#{dtSelectionView.onRowUnselect}" update="#" />
+                        <p:column headerText="Id">
+                            <h:outputText value="#{car.id}" />
+                        </p:column>
+                        <p:column headerText="Nome">
+                            <h:outputText value="#{car.year}" />
+                        </p:column>
+                    </p:dataTable>
+
+                    <h:outputLabel value="Selecione Aviões: "></h:outputLabel>
+                    <p:dataTable id="eventsDT" var="car" value="#{dtSelectionView.cars3}" selectionMode="single" selection="#{dtSelectionView.selectedCar}" rowKey="#{car.id}">
+                        <p:ajax event="rowSelect" listener="#{dtSelectionView.onRowSelect}" update="#" />
+                        <p:ajax event="rowUnselect" listener="#{dtSelectionView.onRowUnselect}" update="#" />
+                        <p:column headerText="Id">
+                            <h:outputText value="#{car.id}" />
+                        </p:column>
+                        <p:column headerText="Nome Piloto">
+                            <h:outputText value="#{car.year}" />
+                        </p:column>
+                    </p:dataTable>
+
+
+                    <h:outputLabel value="Adicionar Passageiros: "></h:outputLabel>
+                    <p:commandButton value="Adicionar"  action="adicionar" ajax="false" />
+
+                    <p:commandButton value="Criar Voo" action="#{buttonView.buttonAction}" ajax="false" />
+                    <p:commandButton value="Cancelar" action="#{buttonView.buttonAction}" ajax="false" />
+                </h:panelGrid>
+            </p:panel>
+
+            <p:panel header="Voo existente" style="margin-bottom:20px">
+                <h:panelGrid columns="2" cellpadding="10">
+                    <p:dataTable var="car" value="#{car.id}">
+                        <p:column headerText="Id">
+                            <h:outputText value="#{car.id}" />
+                        </p:column>
+
+                        <p:column headerText="Data">
+                            <h:outputText value="#{car.year}" />
+                        </p:column>
+
+                        <p:column headerText="Nome Piloto">
+                            <h:outputText value="#{car.brand}" />
+                        </p:column>
+
+                        <p:column headerText="Origem">
+                            <h:outputText value="#{car.color}" />
+                        </p:column>
+                        
+                        <p:column headerText="Destino">
+                            <h:outputText value="#{car.color}" />
+                        </p:column>
+                    </p:dataTable>
+
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
     </h:body>
 </html>
 

@@ -50,6 +50,16 @@ public class Aviao implements Serializable {
         this.nomeTripulacao = nomeTripulacao;
     }
 
+    public List<Voo> getVoos() {
+        return voos;
+    }
+
+    public void setVoos(List<Voo> voos) {
+        this.voos = voos;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 7;

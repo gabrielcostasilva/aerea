@@ -40,11 +40,6 @@ public class Voo implements Serializable {
         super();
     }
 
-    public Voo(Long id, Date dataVoo) {
-        this.id = id;
-        this.dataVoo = dataVoo;
-    }
-
     public Long getId() {
         return id;
     }
@@ -61,14 +56,49 @@ public class Voo implements Serializable {
         this.dataVoo = dataVoo;
     }
 
+    public List<Passageiro> getPassageiros() {
+        return passageiros;
+    }
+
+    public void setPassageiros(List<Passageiro> passageiros) {
+        this.passageiros = passageiros;
+    }
+
+    public DestinoVoo getDestinoVoo() {
+        return destinoVoo;
+    }
+
+    public void setDestinoVoo(DestinoVoo destinoVoo) {
+        this.destinoVoo = destinoVoo;
+    }
+
+    public OrigemVoo getOrigemVoo() {
+        return origemVoo;
+    }
+
+    public void setOrigemVoo(OrigemVoo origemVoo) {
+        this.origemVoo = origemVoo;
+    }
+
+    public List<Aviao> getAvioes() {
+        return avioes;
+    }
+
+    public void setAvioes(List<Aviao> avioes) {
+        this.avioes = avioes;
+    }
+
+    
+
+       
     @Override
     public int hashCode() {
         int hash = 5;
         hash = 11 * hash + Objects.hashCode(this.id);
         return hash;
     }
-
-    @Override
+    
+     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
@@ -87,8 +117,7 @@ public class Voo implements Serializable {
     public String toString() {
         return "Voo{" + "id=" + id + ", dataVoo=" + dataVoo + '}';
     }
-    
-    
+
     
     
 }

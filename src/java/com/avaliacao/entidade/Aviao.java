@@ -13,6 +13,8 @@ public class Aviao implements Serializable {
     private Long id;
     private String nomePiloto;
     
+   
+    
     
     
 }

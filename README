@@ -1,0 +1,5 @@
+Projeto usado na avaliação dos alunos da disciplina de Programação para Web 2, do curso de Engenharia de Software da UTFPR câmpus Dois Vizinhos.
+
+O projeto consiste da (simulação) de um sistema simples de controle de compania aérea.
+
+Anexado na raiz do projeto estão o código SQL para criação do banco e dos dados iniciais, o diagrama de classes de entidade e a prototipação das telas do sistema.

@@ -1,6 +1,7 @@
 package com.avaliacao.entidade;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.ElementCollection;
@@ -11,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Voo implements Serializable {
@@ -29,11 +32,22 @@ public class Voo implements Serializable {
     
     @ElementCollection (fetch = FetchType.EAGER)
     private List<Passageiro> passageiros;
+    
+    @Temporal (TemporalType.DATE)
+    private Date dataVoo;
 
     public Voo() {
         super();
     }
 
+    public Date getDataVoo() {
+        return dataVoo;
+    }
+
+    public void setDataVoo(Date dataVoo) {
+        this.dataVoo = dataVoo;
+    }
+    
     public Long getId() {
         return id;
     }

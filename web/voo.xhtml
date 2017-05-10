@@ -61,6 +61,23 @@
             </p:panel>
 
             <p:panel header="Voos Existentes" style="margin-bottom:20px">
+                <p:dataTable var="voo" value="#{vooMB.listaVoos()}">
+
+
+                    <p:column headerText="Id">
+                        <h:outputText value="#{voo.id}" />
+                    </p:column>
+                    <p:column headerText="Data">
+                        <h:outputText value="#{voo.dataVoo}" />
+                    </p:column>
+                    <p:column headerText="Origem">
+                        <h:outputText value="#{voo.origem.nome}" />
+                    </p:column>
+                    <p:column headerText="Destino">
+                        <h:outputText value="#{voo.destino.nome}" />
+                    </p:column>
+
+                </p:dataTable>
 
             </p:panel>
 

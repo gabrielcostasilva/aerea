@@ -3,9 +3,11 @@ package com.avaliacao.modelo;
 import com.avaliacao.entidade.Aviao;
 import com.avaliacao.entidade.DestinoVoo;
 import com.avaliacao.entidade.OrigemVoo;
+import com.avaliacao.entidade.Voo;
 import com.avaliacao.negocio.IAviao;
 import com.avaliacao.negocio.IDestino;
 import com.avaliacao.negocio.IOrigem;
+import com.avaliacao.negocio.IVoo;
 import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
@@ -28,6 +30,9 @@ public class VooMB {
     
     @EJB
     private IAviao aviaoBean;
+    
+    @EJB
+    private IVoo vooBean;
 
     public List<Aviao> getAvioesSelecionados() {
         return avioesSelecionados;
@@ -75,5 +80,9 @@ public class VooMB {
     
     public List<Aviao> listaAviao() {
         return aviaoBean.consultar();
+    }
+    
+    public List<Voo> listaVoos() {
+        return vooBean.consultar();
     }
 }

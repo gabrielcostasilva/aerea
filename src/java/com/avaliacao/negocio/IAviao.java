@@ -8,5 +8,6 @@ import javax.ejb.Local;
 public interface IAviao {
 
     public List<Aviao> consultar();
+    public Aviao consultar(Long id);
 
 }

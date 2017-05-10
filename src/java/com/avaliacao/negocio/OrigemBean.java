@@ -17,5 +17,12 @@ public class OrigemBean implements IOrigem {
         ("SELECT o FROM OrigemVoo o", OrigemVoo.class).
                 getResultList();
     }
+
+    @Override
+    public OrigemVoo consultar(Long id) {
+        return em.createQuery
+        ("SELECT o FROM OrigemVoo o WHERE o.id = " + id, OrigemVoo.class).
+                getResultList().get(0);
+    }
     
 }

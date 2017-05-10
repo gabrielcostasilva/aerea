@@ -56,7 +56,12 @@
                             <h:outputText value="#{aviao.nomePiloto}" />
                         </p:column>
                     </p:dataTable>
-
+                    
+                    <p:outputLabel value="Adicionar passageiros:"></p:outputLabel>                    
+                    <p:commandButton value="Adicionar" ajax="false" action="adicionar"></p:commandButton>
+                    
+                    <p:commandButton value="Criar voo" ajax="false" action="#{vooMB.criar()}"></p:commandButton>
+                    <p:commandButton value="Cancelar" ajax="false" action="principal"></p:commandButton>
                 </h:panelGrid>
             </p:panel>
 

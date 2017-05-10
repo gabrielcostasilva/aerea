@@ -1,6 +1,7 @@
 package com.avaliacao.entidade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -27,7 +28,7 @@ public class Voo implements Serializable {
     @ManyToOne (fetch = FetchType.EAGER)
     private OrigemVoo origem;
     
-    @ManyToMany (fetch = FetchType.EAGER, mappedBy = "voos")
+    @ManyToMany (fetch = FetchType.EAGER)
     private List<Aviao> avioes;
     
     @ElementCollection (fetch = FetchType.EAGER)
@@ -39,7 +40,7 @@ public class Voo implements Serializable {
     public Voo() {
         super();
     }
-
+    
     public Date getDataVoo() {
         return dataVoo;
     }

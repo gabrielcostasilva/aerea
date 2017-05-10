@@ -18,4 +18,10 @@ public class AviaoBean implements IAviao {
                 getResultList();
     }
 
+    @Override
+    public Aviao consultar(Long id) {
+        return em.createQuery("SELECT o FROM Aviao o WHERE o.id = " + id,
+                Aviao.class).
+                getResultList().get(0);
+    }
 }

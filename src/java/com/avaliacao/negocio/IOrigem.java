@@ -8,5 +8,6 @@ import javax.ejb.Local;
 public interface IOrigem {
 
     public List<OrigemVoo> consultar();
+    public OrigemVoo consultar(Long id);
 
 }

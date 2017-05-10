@@ -21,7 +21,7 @@ public class Aviao implements Serializable {
     @ElementCollection (fetch = FetchType.EAGER)
     private List<String> nomeTripulacao;
     
-    @ManyToMany (fetch = FetchType.EAGER)
+    @ManyToMany (fetch = FetchType.EAGER, mappedBy = "avioes")
     private List<Voo> voos;
 
     public Aviao() {

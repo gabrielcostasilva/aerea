@@ -18,4 +18,11 @@ public class DestinoBean implements IDestino {
                 getResultList();
     }
 
+    @Override
+    public DestinoVoo consultar(Long id) {
+        return em.createQuery("SELECT o FROM DestinoVoo o WHERE o.id = " + id, 
+                DestinoVoo.class).
+                getResultList().get(0);
+    }
+
 }
